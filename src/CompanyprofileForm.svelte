@@ -99,11 +99,7 @@
 
 
 	// Fetch data on component mount
-	onMount(() => {
-	  fetchData();
-	  fetchCountryData();
-      fetchCountries();
-	});
+
 
 
 	async function saveFormData() {
@@ -333,6 +329,13 @@ const fetchCountryData = async () => {
 	}
   
 
+    onMount(() => {
+	  fetchData();
+	  fetchCountryData();
+      fetchCountries();
+      selected = ["IN", "AF"];
+	});
+
 
   </script>
 
@@ -378,7 +381,7 @@ const fetchCountryData = async () => {
 		 </div>
 		 
 	  <div class="mb-6">
-		<Label for="currency" class="block text-sm font-medium text-gray-700 dark:text-white">Currency:</label>
+		<Label for="currency" class="block text-sm font-medium text-gray-700 dark:text-white">Currency:</Label>
 		<div class="relative mt-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700">
 		  <Select id="currency" bind:value={currencyCode} required class="block w-full py-2.5 pl-3 pr-10 text-base border-transparent bg-transparent focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm dark:text-white dark:focus:ring-gray-700 dark:focus:border-gray-600">
 			{#each currencyOptions as currency}
@@ -389,7 +392,7 @@ const fetchCountryData = async () => {
 	
 	  </div>
 	  
-	  <label for="preferredDateFormat" class="block text-sm font-medium text-gray-700 dark:text-white">Preferred Date Format</label>
+	  <Label for="preferredDateFormat" class="block text-sm font-medium text-gray-700 dark:text-white">Preferred Date Format</Label>
 	  <div class="relative mt-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700">
 		<Select id="preferredDateFormat" bind:value={preferredDateformat} required class="block w-full py-2.5 pl-3 pr-10 text-base border-transparent bg-transparent focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm dark:text-white dark:focus:ring-gray-700 dark:focus:border-gray-600">
 		  <option value="default" >Pretty (e.g., 1 Day Ago/2 Week Ago, etc.)</option>
@@ -406,7 +409,7 @@ const fetchCountryData = async () => {
 	  
 	  
 	  <div class="mb-6">
-		<label for="timezone" class="block text-sm font-medium text-gray-700 dark:text-white">Timezone</label>
+		<Label for="timezone" class="block text-sm font-medium text-gray-700 dark:text-white">Timezone</Label>
 		<div class="relative mt-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700">
 		  <Select id="timezone" bind:value={timeZone} required class="block w-full py-2.5 pl-3 pr-10 text-base border-transparent bg-transparent focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm dark:text-white dark:focus:ring-gray-700 dark:focus:border-gray-600">
 			{#each reactiveTimezoneOptions as timezone }
@@ -433,7 +436,7 @@ const fetchCountryData = async () => {
 
 	 <div class="mb-3">
 
-        <Label class="mb-2">Preferred Countries To Display on Top</label>
+        <Label class="mb-2">Preferred Countries To Display on Top</Label>
 
         <div class="multi-Select-dropdown">
           <MultiSelect items={countries} value={selected}/>
