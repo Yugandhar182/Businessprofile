@@ -363,8 +363,8 @@ const fetchCountryData = async () => {
    <div>
 	
 	<div class="mb-6">
-	<label for="phone" class="mb-2" >Phone</label>
-	<input type="tel" id="phone-input" on:input={handleInput}  class="form-select  block w-full py-2.5 pl-3 pr-10 text-base border border-gray-300 rounded-lg bg-transparent focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm dark:text-white dark:focus:ring-gray-700 dark:focus:border-gray-600" style="width:500px;" />
+	<Label for="phone" class="mb-2" >Phone</Label>
+	<Input type="tel" id="phone-input" on:input={handleInput}  class="form-select  block w-full py-2.5 pl-3 pr-10 text-base border border-gray-300 rounded-lg bg-transparent focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm dark:text-white dark:focus:ring-gray-700 dark:focus:border-gray-600" style="width:500px;" />
 
   </div>
 </div>
@@ -378,25 +378,25 @@ const fetchCountryData = async () => {
 		 </div>
 		 
 	  <div class="mb-6">
-		<label for="currency" class="block text-sm font-medium text-gray-700 dark:text-white">Currency:</label>
+		<Label for="currency" class="block text-sm font-medium text-gray-700 dark:text-white">Currency:</label>
 		<div class="relative mt-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700">
-		  <select id="currency" bind:value={currencyCode} required class="block w-full py-2.5 pl-3 pr-10 text-base border-transparent bg-transparent focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm dark:text-white dark:focus:ring-gray-700 dark:focus:border-gray-600">
+		  <Select id="currency" bind:value={currencyCode} required class="block w-full py-2.5 pl-3 pr-10 text-base border-transparent bg-transparent focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm dark:text-white dark:focus:ring-gray-700 dark:focus:border-gray-600">
 			{#each currencyOptions as currency}
 			<option value={currency.value}>{currency.label}</option>
 			{/each}
-		  </select>
+		  </Select>
 		</div>
 	
 	  </div>
 	  
 	  <label for="preferredDateFormat" class="block text-sm font-medium text-gray-700 dark:text-white">Preferred Date Format</label>
 	  <div class="relative mt-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700">
-		<select id="preferredDateFormat" bind:value={preferredDateformat} required class="block w-full py-2.5 pl-3 pr-10 text-base border-transparent bg-transparent focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm dark:text-white dark:focus:ring-gray-700 dark:focus:border-gray-600">
+		<Select id="preferredDateFormat" bind:value={preferredDateformat} required class="block w-full py-2.5 pl-3 pr-10 text-base border-transparent bg-transparent focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm dark:text-white dark:focus:ring-gray-700 dark:focus:border-gray-600">
 		  <option value="default" >Pretty (e.g., 1 Day Ago/2 Week Ago, etc.)</option>
 		  <option >Date only (e.g., 12/31/2020)</option>
 		  <option >Date and Time (e.g., 12/31/2020 15:00:00)</option>
 		  <option >Date and Time (e.g., 12/31/2020 03:00PM)</option>
-		</select>
+		</Select>
 	  </div>
 	  
 	
@@ -408,11 +408,11 @@ const fetchCountryData = async () => {
 	  <div class="mb-6">
 		<label for="timezone" class="block text-sm font-medium text-gray-700 dark:text-white">Timezone</label>
 		<div class="relative mt-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700">
-		  <select id="timezone" bind:value={timeZone} required class="block w-full py-2.5 pl-3 pr-10 text-base border-transparent bg-transparent focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm dark:text-white dark:focus:ring-gray-700 dark:focus:border-gray-600">
+		  <Select id="timezone" bind:value={timeZone} required class="block w-full py-2.5 pl-3 pr-10 text-base border-transparent bg-transparent focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm dark:text-white dark:focus:ring-gray-700 dark:focus:border-gray-600">
 			{#each reactiveTimezoneOptions as timezone }
 			<option value={timezone.code}>{timezone.name}</option>
 			{/each}
-		  </select>
+		  </Select>
 		  </div>
 	
 	  </div>
@@ -433,7 +433,7 @@ const fetchCountryData = async () => {
 
 	 <div class="mb-3">
 
-        <label class="mb-2">Preferred Countries To Display on Top</label>
+        <Label class="mb-2">Preferred Countries To Display on Top</label>
 
         <div class="multi-Select-dropdown">
           <MultiSelect items={countries} value={selected}/>
