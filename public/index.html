@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Recruitly user profile</title>
+	<link rel='stylesheet' href='/global.css'>
+    <link rel='stylesheet' href='/build/bundle.css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/16.0.8/css/intlTelInput.css" />
+    <script src='/build/bundle.js'></script>
+</head>
+<body>
+<div id="recruitly-userprofile-app"></div>
+<script type="text/javascript">
+    const myapp = new RecruitlyUserprofile({
+        renderTo: "recruitly-userprofile-app",
+        searchrequest: {
+            filterId: "test6882cf501d994d78bc7be22979c38b1c",
+            module:'CANDIDATE'
+        },
+        user: {
+            id: '4fe585d8-1951-41b3-bece-a74aa1c72994',
+            name: 'Lysha',
+            email: 'quirecruit@gmail.com',
+            avatar: 'https://api.dicebear.com/5.x/lorelei/svg',
+        },
+        service: {
+            csrf:'devlocal',
+            sfkey:'ORg4AjUWIQA/Gnt2VVhkQlFac11JXGFWfVJpTGpQdk5xdV9DaVZUTWY/P1ZhSXxQdkdhUX1ccnFWR2hZVEI=',
+            gmapsKey: 'AIzaSyCJAxAvG0qqodF2Yeo8oXrdVZ03lyG9lrI',
+            endpoint: 'https://api.recruitly.io/api',
+            apiKey: 'TEST69513C4B379BD5594CD0AAC9ECA436CA2C83',
+            apiKeyLocation: 'header',
+            apiKeyName: 'apiKey',
+            dev:true
+        },
+    });
+</script>
+</body>
+</html>
